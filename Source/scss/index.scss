@@ -100,12 +100,12 @@ body {
    &.-open {
       display: flex;
    }
-   p,
-   span,
+   .counter__text,
    .counter__addition, 
-   .counter__reset {
+   .counter__reset{
       width: 100%;
       height: 100px;
+      text-align: center;
       font-weight: 700;
       font-size: 32px;
       line-height: 44px;
