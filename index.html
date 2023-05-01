@@ -36,9 +36,21 @@
 
 <body>
    <div class="container">
+      <div class="welcome__inner">
+         <p class="welcome__text">Добро пожаловать в SDBank!</p>
+         <form action="#" class="welcome__form" autocomplete="on">
+            <input required id="name" class="form__name" type="name" placeholder="Введите ваше имя">
+            <button class="form__btn" type="submit"></button>
+         </form>
+      </div>
       <div class="counter__inner">
-         <div><span class="counter__score">0</span><span>&#8364</span></div>
-         <button class="counter__addition" ontouchstart="">+1 &#8364 на счет</button>
+         <div>
+            <p class="name"></p>
+            <span>на вашем счёте: </span>
+            <span class="counter__score">0</span>
+            <span>&#8364</span>
+         </div>
+         <button class="counter__addition" ontouchstart="">Пополнить счёт на 1 &#8364</button>
          <button class="counter__reset" ontouchstart="">Обналичить</button>
       </div>
    </div>

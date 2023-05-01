@@ -87,11 +87,11 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1180px;
+  max-width: 100vw;
   padding: 0 15px;
 }
 
-.counter__inner {
+.welcome__inner {
   margin: 125px auto 0;
   max-width: 500px;
   display: flex;
@@ -100,6 +100,58 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.welcome__inner.-close {
+  display: none;
+}
+.welcome__inner .welcome__text {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+}
+.welcome__inner .welcome__form {
+  max-width: 500px;
+  display: flex;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
+}
+.welcome__inner .welcome__form.-waiting {
+  background: url("../../Img/icon/loading.gif") center center/50% no-repeat;
+}
+.welcome__inner .welcome__form .form__name {
+  width: 100%;
+  height: auto;
+  padding: 0 0 0 25px;
+  border: 2px solid gray;
+  border-right-width: 0px;
+  border-radius: 20px 0 0 20px;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 44px;
+}
+.welcome__inner .welcome__form .form__btn {
+  padding: 0 25px;
+  background: url("../../Img/icon/done.png") center center/80% no-repeat, #fff;
+  border: 2px solid gray;
+  border-left-width: 0px;
+  border-radius: 0 20px 20px 0;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 44px;
+}
+
+.counter__inner {
+  display: none;
+  margin: 125px auto 0;
+  max-width: 500px;
+  gap: 36px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.counter__inner.-open {
+  display: flex;
+}
+.counter__inner p,
 .counter__inner span,
 .counter__inner .counter__addition,
 .counter__inner .counter__reset {
@@ -111,7 +163,7 @@ body {
   color: #fff;
   border-radius: 20px;
 }
-.counter__inner .counter__score, .counter__inner span {
+.counter__inner .counter__score, .counter__inner p, .counter__inner span {
   width: auto;
   height: auto;
   color: #000;
