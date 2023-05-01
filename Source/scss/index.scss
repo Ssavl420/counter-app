@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:regular');
+@import "nullindex";
+
+$maxWidth: 1400;
+$maxWidthContainer: 1150;
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+   $addSize: $startSize - $minSize;
+   @if $type==1 {
+      // Только если меньше контейнера
+      #{$property}: $startSize + px;
+      @media (max-width: #{$maxWidthContainer + px}) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidthContainer - 375}));
+      }
+   } @else if $type==2 {
+      // Только если больше контейнера
+      #{$property}: $startSize + px;
+      @media (min-width: #{$maxWidthContainer + px}) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
+      }
+   } @else {
+      // Всегда
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
+   }
+}
+html {
+   scroll-behavior: smooth;
+}
+body {
+   margin: 0 auto;
+   max-width: 100%;
+   font-family: Manrope;
+   font-size: 18px;
+   line-height: 25px;
+   background-color: #fff;
+}
+.container {
+   margin: 0 auto;
+   max-width: 1180px; //это 1150px с padding
+   padding: 0 15px;
+}
+
