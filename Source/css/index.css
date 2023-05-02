@@ -100,6 +100,12 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.welcome__inner.-waiting {
+  background: url("../../Img/icon/loading.gif") center center/30% no-repeat;
+}
+.welcome__inner.-waiting .welcome__form {
+  z-index: -1;
+}
 .welcome__inner.-close {
   display: none;
 }
@@ -112,11 +118,10 @@ body {
 .welcome__inner .welcome__form {
   max-width: 500px;
   display: flex;
+  position: relative;
+  z-index: 0;
   border-radius: 20px;
   box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
-}
-.welcome__inner .welcome__form.-waiting {
-  background: url("../../Img/icon/loading.gif") center center/50% no-repeat;
 }
 .welcome__inner .welcome__form .form__name {
   width: 100%;

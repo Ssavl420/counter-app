@@ -47,6 +47,12 @@ body {
    align-items: center;
    justify-content: center;
    flex-direction: column;
+   &.-waiting {
+      background: url('../../Img/icon/loading.gif') center center / 30% no-repeat;
+      .welcome__form {
+         z-index: -1;
+      }
+   }
    &.-close {
       display: none;
    }
@@ -59,11 +65,10 @@ body {
    .welcome__form {
       max-width: 500px;
       display: flex;
+      position: relative;
+      z-index: 0;
       border-radius: 20px;
       box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
-      &.-waiting {
-         background: url('../../Img/icon/loading.gif') center center / 50% no-repeat;
-      }
       .form__name {
          width: 100%;
          height: auto;

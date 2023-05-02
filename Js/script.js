@@ -6,10 +6,12 @@ const timeout = 3000;
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const nameForm = document.querySelector('.form__name').value;
-  form.classList.add('-waiting'), timeout;
-  welcomeBody.classList.add('-close'), timeout;
+  welcomeBody.classList.add('-waiting');
+  setTimeout(() => {
+  welcomeBody.classList.add('-close');
   counterBody.classList.add('-open');
   userName.innerText = nameForm;
+  }, 500);
 });
 
 
