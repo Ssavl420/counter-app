@@ -200,6 +200,14 @@ body {
   visibility: visible;
   transform: translate(0, 0);
 }
+.counter__inner .counter__reset.-disable {
+  background: gray;
+  color: rgb(230, 230, 230);
+  cursor: default;
+}
+.counter__inner .counter__reset.-disable:active {
+  top: 0px;
+}
 .counter__inner .reset__text {
   opacity: 0;
   visibility: hidden;

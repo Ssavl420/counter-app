@@ -147,6 +147,14 @@ body {
          visibility: visible;
          transform: translate(0,0);
       }
+      &.-disable {
+         background: gray;
+         color: rgb(230, 230, 230);
+         cursor: default;
+         &:active {
+            top:0px;
+         }
+      }
    }
    .reset__text {
       opacity: 0;

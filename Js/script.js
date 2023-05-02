@@ -26,6 +26,9 @@ btnScore.addEventListener('click', function () {
   score.innerText = counter;
 
   btnReset.classList.add("-open")
+  btnReset.classList.remove('-disable')
+  // if (btnReset = document.querySelector('-disable')) {
+  //   btnReset.classList.remove('-disable')};
 });
 
 btnReset.addEventListener('click', function () {
@@ -35,6 +38,7 @@ btnReset.addEventListener('click', function () {
   counter = 0;
   score.innerText = counter;
 
-  btnReset.classList.remove("-open")
+  // btnReset.classList.remove("-open")
+  btnReset.classList.add("-disable")
 });
 
