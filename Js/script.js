@@ -27,8 +27,6 @@ btnScore.addEventListener('click', function () {
 
   btnReset.classList.add("js-open")
   btnReset.classList.remove('js-disable')
-  // if (btnReset = document.querySelector('-disable')) {
-  //   btnReset.classList.remove('-disable')};
 });
 
 btnReset.addEventListener('click', function () {
