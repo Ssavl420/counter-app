@@ -72,25 +72,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*----------------------*/
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0 auto;
-  max-width: 100%;
-  font-family: "Exo 2";
-  font-size: 18px;
-  line-height: 25px;
-  background-color: #fff;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 100vw;
-}
-
 .welcome__inner {
   margin: 125px auto 0;
   max-width: 500px;
@@ -100,20 +81,17 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-.welcome__inner.-waiting {
+.welcome__inner.js-waiting {
   background: url("../../Img/icon/loading.gif") 50% 65%/30% no-repeat;
 }
-.welcome__inner.-waiting .welcome__form {
+.welcome__inner.js-waiting .welcome__form {
   z-index: -1;
 }
-.welcome__inner.-close {
+.welcome__inner.js-close {
   display: none;
 }
 .welcome__inner .welcome__text {
   text-align: center;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 44px;
 }
 .welcome__inner .welcome__form {
   max-width: 500px;
@@ -127,18 +105,12 @@ body {
   padding: 0 0 0 25px;
   width: 100%;
   height: auto;
-  font-weight: 200;
-  font-size: 24px;
-  line-height: 44px;
   border: 2px solid gray;
   border-right-width: 0px;
   border-radius: 20px 0 0 20px;
 }
 .welcome__inner .welcome__form .form__btn {
   padding: 0 25px;
-  font-weight: 200;
-  font-size: 24px;
-  line-height: 44px;
   background: url("../../Img/icon/done.png") center center/80% no-repeat, #fff;
   border: 2px solid gray;
   border-left-width: 0px;
@@ -154,7 +126,7 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-.counter__inner.-open {
+.counter__inner.js-open {
   display: flex;
 }
 .counter__inner .counter__text,
@@ -165,9 +137,6 @@ body {
   width: 100%;
   height: 100px;
   text-align: center;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 44px;
   color: #fff;
   border-radius: 20px;
 }
@@ -195,17 +164,17 @@ body {
   transform: translate(0, -100%);
   transition: all 0.5s ease;
 }
-.counter__inner .counter__reset.-open {
+.counter__inner .counter__reset.js-open {
   opacity: 1;
   visibility: visible;
   transform: translate(0, 0);
 }
-.counter__inner .counter__reset.-disable {
+.counter__inner .counter__reset.js-disable {
   background: gray;
   color: rgb(230, 230, 230);
   cursor: default;
 }
-.counter__inner .counter__reset.-disable:active {
+.counter__inner .counter__reset.js-disable:active {
   top: 0px;
 }
 .counter__inner .reset__text {
@@ -213,7 +182,42 @@ body {
   visibility: hidden;
   transition: all 0.5s ease;
 }
-.counter__inner .reset__text.-open {
+.counter__inner .reset__text.js-open {
   opacity: 1;
   visibility: visible;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 100%;
+  font-family: "Exo 2";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  background-color: #fff;
+}
+body button {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+}
+body input {
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 44px;
+}
+body input:-webkit-autofill {
+  font-size: 24px;
+  -webkit-box-shadow: inset 0 0 0 50px white;
+  -webkit-text-fill-color: black;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 100vw;
 }/*# sourceMappingURL=index.css.map */

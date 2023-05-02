@@ -1,27 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import "nullindex";
+@import "welcomeInner";
+@import "counterInner";
 
-$maxWidth: 1400;
-$maxWidthContainer: 1150;
-@mixin adaptiv-value($property, $startSize, $minSize, $type) {
-   $addSize: $startSize - $minSize;
-   @if $type==1 {
-      // Только если меньше контейнера
-      #{$property}: $startSize + px;
-      @media (max-width: #{$maxWidthContainer + px}) {
-         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidthContainer - 375}));
-      }
-   } @else if $type==2 {
-      // Только если больше контейнера
-      #{$property}: $startSize + px;
-      @media (min-width: #{$maxWidthContainer + px}) {
-         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
-      }
-   } @else {
-      // Всегда
-      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
-   }
-}
 html {
    scroll-behavior: smooth;
 }
@@ -29,144 +10,30 @@ body {
    margin: 0 auto;
    max-width: 100%;
    font-family: 'Exo 2';
-   font-size: 18px;
-   line-height: 25px;
+   font-weight: 700;
+   font-size: 32px;
+   line-height: 44px;
    background-color: #fff;
+   button {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 44px;
+   }
+   input {
+      font-weight: 200;
+      font-size: 24px;
+      line-height: 44px;
+      &:-webkit-autofill {
+         font-size: 24px;
+         -webkit-box-shadow: inset 0 0 0 50px white;
+         -webkit-text-fill-color: black;
+      }
+   }
 }
 .container {
    margin: 0 auto;
    padding: 0 15px;
    max-width: 100vw;
-}
-
-.welcome__inner {
-   margin: 125px auto 0;
-   max-width: 500px;
-   display: flex;
-   gap: 36px;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   &.-waiting {
-      background: url('../../Img/icon/loading.gif') 50% 65% / 30% no-repeat;
-      .welcome__form {
-         z-index: -1;
-      }
-   }
-   &.-close {
-      display: none;
-   }
-   .welcome__text {
-      text-align: center;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 44px;
-   }
-   .welcome__form {
-      max-width: 500px;
-      display: flex;
-      position: relative;
-      z-index: 0;
-      border-radius: 20px;
-      box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
-      .form__name {
-         padding: 0 0 0 25px;
-         width: 100%;
-         height: auto;
-         font-weight: 200;
-         font-size: 24px;
-         line-height: 44px;
-         border: 2px solid gray;
-         border-right-width: 0px;
-         border-radius: 20px 0 0 20px;
-      }
-      .form__btn {
-         padding: 0 25px;
-         font-weight: 200;
-         font-size: 24px;
-         line-height: 44px;
-         background: url('../../Img/icon/done.png') center center / 80% no-repeat, #fff;
-         border: 2px solid gray;
-         border-left-width: 0px;
-         border-radius: 0 20px 20px 0;
-      }
-   }
-}
-
-
-.counter__inner {
-   margin: 125px auto 0;
-   max-width: 500px;
-   display: none;
-   gap: 36px;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   &.-open {
-      display: flex;
-   }
-   .counter__text,
-   .counter__addition, 
-   .counter__reset,
-   .reset__text,
-   .reset__score {
-      width: 100%;
-      height: 100px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 44px;
-      color: #fff;
-      border-radius: 20px;
-   }
-   .counter__score, .reset__score , p, span {
-      width: auto;
-      height: auto;
-      color: #000;
-   }
-   button {
-      position: relative;
-      box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
-      &:active {
-         top:3px;
-      }
-   }
-   .counter__addition {
-      position: relative;
-      background: #4191FF;
-      z-index: 1;
-   }
-   .counter__reset {
-      opacity: 0;
-      visibility: hidden;
-      background: #53d45a;
-      transform: translate(0, -100%);
-      transition: all .5s ease;
-      &.-open {
-         opacity: 1;
-         visibility: visible;
-         transform: translate(0,0);
-      }
-      &.-disable {
-         background: gray;
-         color: rgb(230, 230, 230);
-         cursor: default;
-         &:active {
-            top:0px;
-         }
-      }
-   }
-   .reset__text {
-      opacity: 0;
-      visibility: hidden;
-      transition: all .5s ease;
-      &.-open {
-         opacity: 1;
-         visibility: visible;
-      }
-      .reset__score {
-      }
-   }
 }
 
 
