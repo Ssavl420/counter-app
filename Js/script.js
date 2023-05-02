@@ -15,16 +15,10 @@ form.addEventListener('submit', function (e) {
   }, 500);
 });
 
-
-// document.forms.form.onsubmit = function() {
-//   nameForm = this.nameForm.value;
-//   console.log(nameForm)
-//   return false;
-// };
-
 let counter = 0;
 const btnScore = document.querySelector('.counter__addition')
 const btnReset = document.querySelector('.counter__reset')
+let cashOut = document.querySelector('.reset__score')
 score = document.querySelector('.counter__score');
 
 btnScore.addEventListener('click', function () {
@@ -35,6 +29,9 @@ btnScore.addEventListener('click', function () {
 });
 
 btnReset.addEventListener('click', function () {
+  if (+cashOut.innerHTML > 0) {cashOut.innerText = +cashOut.innerHTML + counter;
+  } else { cashOut.innerText = counter; }
+  document.querySelector('.reset__text').classList.add('-open');
   counter = 0;
   score.innerText = counter;
 
