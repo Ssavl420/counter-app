@@ -24,7 +24,6 @@ score = document.querySelector('.counter__score');
 btnScore.addEventListener('click', function () {
   counter = counter + 1;
   score.innerText = counter;
-
   btnReset.classList.add("js-open")
   btnReset.classList.remove('js-disable')
 });
@@ -35,8 +34,6 @@ btnReset.addEventListener('click', function () {
   document.querySelector('.reset__text').classList.add('js-open');
   counter = 0;
   score.innerText = counter;
-
-  // btnReset.classList.remove("-open")
   btnReset.classList.add("js-disable")
 });
 
