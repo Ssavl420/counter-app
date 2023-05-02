@@ -35,8 +35,8 @@ body {
 }
 .container {
    margin: 0 auto;
-   max-width: 100vw;
    padding: 0 15px;
+   max-width: 100vw;
 }
 
 .welcome__inner {
@@ -70,34 +70,34 @@ body {
       border-radius: 20px;
       box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
       .form__name {
+         padding: 0 0 0 25px;
          width: 100%;
          height: auto;
-         padding: 0 0 0 25px;
-         border: 2px solid gray;
-         border-right-width: 0px;
-         border-radius: 20px 0 0 20px;
          font-weight: 200;
          font-size: 24px;
          line-height: 44px;
+         border: 2px solid gray;
+         border-right-width: 0px;
+         border-radius: 20px 0 0 20px;
       }
       .form__btn {
          padding: 0 25px;
+         font-weight: 200;
+         font-size: 24px;
+         line-height: 44px;
          background: url('../../Img/icon/done.png') center center / 80% no-repeat, #fff;
          border: 2px solid gray;
          border-left-width: 0px;
          border-radius: 0 20px 20px 0;
-         font-weight: 200;
-         font-size: 24px;
-         line-height: 44px;
       }
    }
 }
 
 
 .counter__inner {
-   display: none;
    margin: 125px auto 0;
    max-width: 500px;
+   display: none;
    gap: 36px;
    align-items: center;
    justify-content: center;
