@@ -101,7 +101,7 @@ body {
   flex-direction: column;
 }
 .welcome__inner.-waiting {
-  background: url("../../Img/icon/loading.gif") center center/30% no-repeat;
+  background: url("../../Img/icon/loading.gif") 50% 65%/30% no-repeat;
 }
 .welcome__inner.-waiting .welcome__form {
   z-index: -1;

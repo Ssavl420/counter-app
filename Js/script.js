@@ -11,6 +11,7 @@ form.addEventListener('submit', function (e) {
   welcomeBody.classList.add('-close');
   counterBody.classList.add('-open');
   userName.innerText = nameForm;
+  welcomeBody.classList.remove('-waiting');
   }, 500);
 });
 
