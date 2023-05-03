@@ -10,7 +10,16 @@ form.addEventListener('submit', function (e) {
   setTimeout(() => {
   welcomeBody.classList.add('js-close');
   counterBody.classList.add('js-open');
-  userName.innerText = nameForm;
+
+  let h=(new Date()).getHours();
+  if (h > 23 || h <7) welcomeText = (', Добрый ночи!');
+  if (h > 6 && h < 12) welcomeText = (', Доброе утро!'); 
+  if (h > 11 && h < 19) welcomeText = (', Добрый день!'); 
+  if (h > 18 && h < 24) welcomeText = (', Добрый вечер!'); 
+
+  userName.innerText = (nameForm + welcomeText);
+  score.innerText = (counter + ' \u20ac');
+
   welcomeBody.classList.remove('js-waiting');
   }, 500);
 });
@@ -18,22 +27,23 @@ form.addEventListener('submit', function (e) {
 let counter = 0;
 const btnScore = document.querySelector('.counter__addition')
 const btnReset = document.querySelector('.counter__reset')
-let cashOut = document.querySelector('.reset__score')
-score = document.querySelector('.counter__score');
+let cashOut = document.querySelector('.js-reset__score')
+score = document.querySelector('.js-counter__score');
 
 btnScore.addEventListener('click', function () {
-  counter = counter + 1;
-  score.innerText = counter;
+  counter++;
+  score.innerText = (counter + ' \u20ac');
   btnReset.classList.add("js-open")
   btnReset.classList.remove('js-disable')
 });
 
 btnReset.addEventListener('click', function () {
-  if (+cashOut.innerHTML > 0) {cashOut.innerText = +cashOut.innerHTML + counter;
-  } else { cashOut.innerText = counter; }
+  if (cashOut.innerHTML.replace(/[^0-9.]/g, '') > 0) {cashOut.innerText = (+cashOut.innerHTML.replace(/[^0-9.]/g, '') + counter) + ' \u20ac';
+  } else { cashOut.innerText = counter + ' \u20ac'; }
+
   document.querySelector('.reset__text').classList.add('js-open');
   counter = 0;
-  score.innerText = counter;
+  score.innerText = (counter + ' \u20ac');
   btnReset.classList.add("js-disable")
 });
 

@@ -122,30 +122,29 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 500px;
   display: none;
   gap: 36px;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 .counter__inner.js-open {
   display: flex;
 }
-.counter__inner .counter__text,
+.counter__inner .counter__text span {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .counter__inner .counter__addition,
 .counter__inner .counter__reset,
-.counter__inner .reset__text,
-.counter__inner .reset__score {
+.counter__inner .reset__texts {
   width: 100%;
-  height: 100px;
   text-align: center;
   color: #fff;
   border-radius: 20px;
 }
-.counter__inner .counter__score, .counter__inner .reset__score, .counter__inner p, .counter__inner span {
-  width: auto;
-  height: auto;
+.counter__inner .js-counter__score, .counter__inner .js-reset__score, .counter__inner p, .counter__inner span {
   color: #000;
 }
 .counter__inner button {
+  height: 100px;
   position: relative;
   box-shadow: 5px 5px 15px 0px rgb(99, 99, 99);
 }
@@ -181,6 +180,11 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
+}
+.counter__inner .reset__text span {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .counter__inner .reset__text.js-open {
   opacity: 1;
