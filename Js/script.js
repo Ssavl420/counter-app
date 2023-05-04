@@ -12,12 +12,12 @@ form.addEventListener('submit', function (e) {
   counterBody.classList.add('js-open');
 
   let h=(new Date()).getHours();
-  if (h > 23 || h <7) welcomeText = (', Добрый ночи!');
-  if (h > 6 && h < 12) welcomeText = (', Доброе утро!'); 
-  if (h > 11 && h < 19) welcomeText = (', Добрый день!'); 
-  if (h > 18 && h < 24) welcomeText = (', Добрый вечер!'); 
+  if (h > 23 || h <7) welcomeText = ('Добрый ночи!');
+  if (h > 6 && h < 12) welcomeText = ('Доброе утро!'); 
+  if (h > 11 && h < 19) welcomeText = ('Добрый день!'); 
+  if (h > 18 && h < 24) welcomeText = ('Добрый вечер!'); 
 
-  userName.innerText = (nameForm + welcomeText);
+  userName.innerText = (nameForm + "," + '\n' + welcomeText);
   score.innerText = (counter + ' \u20ac');
 
   welcomeBody.classList.remove('js-waiting');
@@ -38,7 +38,8 @@ btnScore.addEventListener('click', function () {
 });
 
 btnReset.addEventListener('click', function () {
-  if (cashOut.innerHTML.replace(/[^0-9.]/g, '') > 0) {cashOut.innerText = (+cashOut.innerHTML.replace(/[^0-9.]/g, '') + counter) + ' \u20ac';
+  cashOutNumber = cashOut.innerHTML.replace(/[^0-9.]/g, '')
+  if (cashOutNumber > 0) {cashOut.innerText = (+cashOutNumber + counter) + ' \u20ac';
   } else { cashOut.innerText = counter + ' \u20ac'; }
 
   document.querySelector('.reset__text').classList.add('js-open');
