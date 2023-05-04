@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 .welcome__inner.js-waiting {
-  background: url("../../Img/icon/loading.gif") 50% 65%/30% no-repeat;
+  background: url("../../Img/icon/loading.gif") 50% 94%/20% no-repeat;
 }
 .welcome__inner.js-waiting .welcome__form {
   z-index: -1;
