@@ -21,7 +21,7 @@ form.addEventListener('submit', function (e) {
   score.innerText = (counter + ' \u20ac');
 
   welcomeBody.classList.remove('js-waiting');
-  }, 500);
+  }, 1300);
 });
 
 let counter = 0;
