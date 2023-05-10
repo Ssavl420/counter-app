@@ -7,6 +7,21 @@
    flex-direction: column;
    &.js-open {
       display: flex;
+      position: relative;
+   }
+   &.js-waiting {
+      background: url('../../Img/icon/loading.gif') 50% 43% / 20% no-repeat;
+   }
+   .counter__exit {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 5vh;
+      right: 0;
+      img {
+         width: 100%;
+         height: 100%;
+      }
    }
    .counter__text span {
       display: flex;

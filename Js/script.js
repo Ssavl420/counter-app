@@ -48,3 +48,14 @@ btnReset.addEventListener('click', function () {
   btnReset.classList.add("js-disable")
 });
 
+const btnExit = document.querySelector('.counter__exit')
+btnExit.addEventListener('click' ,function () {
+  counterBody.classList.add('js-waiting');
+  setTimeout (() => {
+  counterBody.classList.remove('js-open');
+  welcomeBody.classList.remove('js-close');
+  document.querySelector('.form__name').value = "";
+  counterBody.classList.remove('js-waiting');
+}, 1300);
+});
+

@@ -128,6 +128,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 .counter__inner.js-open {
   display: flex;
+  position: relative;
+}
+.counter__inner.js-waiting {
+  background: url("../../Img/icon/loading.gif") 50% 43%/20% no-repeat;
+}
+.counter__inner .counter__exit {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5vh;
+  right: 0;
+}
+.counter__inner .counter__exit img {
+  width: 100%;
+  height: 100%;
 }
 .counter__inner .counter__text span {
   display: flex;
