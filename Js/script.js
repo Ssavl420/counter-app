@@ -2,7 +2,7 @@ const form = document.querySelector('.welcome__form')
 const welcomeBody = document.querySelector('.welcome__inner')
 const counterBody = document.querySelector('.counter__inner')
 const userName = document.querySelector('.js-name')
-const timeout = 3000;
+const COUNTER_INITIAL_VALUE = 0;
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const nameForm = document.querySelector('.form__name').value;
@@ -24,7 +24,7 @@ form.addEventListener('submit', function (e) {
   }, 1300);
 });
 
-let counter = 0;
+let counter = COUNTER_INITIAL_VALUE;
 const btnScore = document.querySelector('.counter__addition')
 const btnReset = document.querySelector('.counter__reset')
 let cashOut = document.querySelector('.js-reset__score')
@@ -43,7 +43,7 @@ btnReset.addEventListener('click', function () {
   } else { cashOut.innerText = counter + ' \u20ac'; }
 
   document.querySelector('.reset__text').classList.add('js-open');
-  counter = 0;
+  counter = COUNTER_INITIAL_VALUE;
   score.innerText = (counter + ' \u20ac');
   btnReset.classList.add("js-disable")
 });
